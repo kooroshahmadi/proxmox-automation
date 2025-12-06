@@ -27,7 +27,7 @@ resource "proxmox_vm_qemu" "alpine_vm" {
   for_each = var.vms
 
   name        = each.key
-  target_node = "pve"            # CHANGE THIS if your Proxmox node is not named 'pve'
+  target_node = "proxmox1"            # CHANGE THIS if your Proxmox node is not named 'pve'
   vmid        = each.value.vmid
   clone       = "alpine-template" 
 
